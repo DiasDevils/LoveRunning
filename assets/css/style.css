@@ -19,7 +19,10 @@ header {background-color: #ffffff;
         position: fixed;
         z-index:99;
         width: 100%;
-        box-shadow: 0 2px 2px #3a3a3a ;}
+        box-shadow: 0 2px 2px #3a3a3a;
+        display:flex;
+        justify-content: space-between;
+        align-items: baseline;}
 
 header a {text-decoration: none;
          color: inherit;}        
@@ -34,10 +37,29 @@ h1 {font-family: 'Oswald', sans-serif;
       list-style-type: none;}    
 
 #menu > li { margin-bottom: 1em;}  
-     
+
 .active {border-bottom: 1px solid #3a3a3a;}
 
-/* main */
+/* Navbar styles with dropdown toggle */
+nav {position: absolute;
+     background-color: #ffffff;
+     width: 100%;
+     padding: 0 1rem;
+     left: 0;
+     box-shadow: 0 2px 2px #3a3a3a ;
+     display: none;
+     /* the top of element Home Gallry Signup starts at buttom of parent */
+     top: 100%;}
+
+     /* main */
+
+/* nav toggle */
+#nav-toggle:checked~nav{display: block;}
+/* the below hides the checkbox */
+#nav-toggle{display:none;}
+/* make label larger so its easy to tap on the X */
+.nav-toggle-label {font-size: 2rem;}
+
 main {background-color: lightblue;
       /* makes main element take up any surplus space to push footer down*/
       flex: 1 0 auto;}
