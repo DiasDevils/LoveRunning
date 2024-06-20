@@ -89,3 +89,21 @@ main {background-color: lightblue;
 
 /* footer */
 footer {background-color: orange;}
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) 
+{
+    /*Header*/
+    nav {display: block;
+         position:relative;
+         box-shadow: none;
+         width: fit-content;
+         padding-right: 1rem;
+      }
+      /* display flex displays in a row not a column */
+      #menu {display: flex;}
+      /* padding provides spacing */
+      #menu > li {padding-left: 1rem;}
+      /* toggle label hides the X */
+      .nav-toggle-label {display:none;}
+}
