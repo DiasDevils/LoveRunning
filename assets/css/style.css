@@ -1,3 +1,4 @@
+/* */
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 /* asterix Wildcard selector to override default styles added by the browser*/
@@ -32,34 +33,55 @@ h1 {font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
     color: #252525;}
 
+/* styling the Home Gallery Signup*/
 #menu {font-size: 110%;
       letter-spacing: 4px;
       list-style-type: none;}    
 
+      /* adds space below each <li> element, pushing subsequent elements 1em down. 
+1em is a relative unit, typically equivalent to the current font size of the element,
+ providing responsive spacing that adjusts with text size.*/
 #menu > li { margin-bottom: 1em;}  
 
+/* adds an underline to 'Home' */
 .active {border-bottom: 1px solid #3a3a3a;}
 
 /* Navbar styles with dropdown toggle */
-nav {position: absolute;
+
+nav {/* position responsible for location to previous ancestor */
+     position: absolute;
      background-color: #ffffff;
+     /* width uses 100% of the width of page*/
      width: 100%;
+     /*sets 0 padding on the top and bottom and 1 rem unit of padding on the left and right.*/
      padding: 0 1rem;
+     /* left is responsible for location */
      left: 0;
+     /* responsible for box shadow and color 
+     The shadow is positioned 0 pixels horizontally (left/right), 
+     2 pixels vertically (down), and has a blur radius of 2 pixels.
+      The color of the shadow is a dark gray */
      box-shadow: 0 2px 2px #3a3a3a ;
+     /* display- Completely hides the nav element,won’t take up any space in the layout, won’t be visible. */
      display: none;
-     /* the top of element Home Gallry Signup starts at buttom of parent */
+     /* the top of element Home Gallery Signup starts at buttom of parent */
      top: 100%;}
+  
+/* nav toggle*/
 
-     /* main */
-
-/* nav toggle */
+/* property makes the element a block-level element.
+ Block-level elements take up the full width of their parent container, 
+ stacking vertically, one after the other. */
 #nav-toggle:checked~nav{display: block;}
+
 /* the below hides the checkbox */
 #nav-toggle{display:none;}
+
 /* make label larger so its easy to tap on the X */
 .nav-toggle-label {font-size: 2rem;}
 
+
+ /* main */
 main {background-color: lightblue;
       /* makes main element take up any surplus space to push footer down*/
       flex: 1 0 auto;}
