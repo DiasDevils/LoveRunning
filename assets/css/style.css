@@ -1,139 +1,120 @@
+/* */
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* asterix Wildcard selector to override default styles added by the browser*/
+* {padding: 0;
+   margin:0;
+   box-sizing: border-box;}
 
-/* Asterisk wildcard selector to override default styles added by the browser */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+/* general styles */
+body { min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+       /* generic project styles */
+       color: #3a3a3a;
+       font-family: 'Lato', sans-serif;}
 
-/* General styles */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* Generic project styles */
-    color: #3a3a3a;
-    font-family: 'Lato', sans-serif;
-}
+/* header */
+header {background-color: #ffffff;
+        padding: 0 1rem;
+        position: fixed;
+        z-index:99;
+        width: 100%;
+        box-shadow: 0 2px 2px #3a3a3a;
+        display:flex;
+        justify-content: space-between;
+        align-items: baseline;}
 
-/* Header */
-header {
-    background-color: #ffffff;
-    padding: 0 1rem;
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
+header a {text-decoration: none;
+         color: inherit;}        
 
-header a {
-    text-decoration: none;
-    color: inherit;
-}
-
-h1 {
-    font-family: 'Oswald', sans-serif;
+h1 {font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #252525;
-}
+    color: #252525;}
 
-#menu {
-    font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
+/* styling the Home Gallery Signup*/
+#menu {font-size: 110%;
+      letter-spacing: 4px;
+      list-style-type: none;}    
 
-#menu > li {
-    margin-bottom: 1em;
-}
+      /* adds space below each <li> element, pushing subsequent elements 1em down. 
+1em is a relative unit, typically equivalent to the current font size of the element,
+ providing responsive spacing that adjusts with text size.*/
+#menu > li { margin-bottom: 1em;}  
 
-.active {
-    border-bottom: 1px solid #3a3a3a;
-}
+/* adds an underline to 'Home' */
+.active {border-bottom: 1px solid #3a3a3a;}
 
 /* Navbar styles with dropdown toggle */
-nav {
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    left: 0;
-    padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: none;
-    top: 100%;
-}
 
-/* Nav toggle */
-#nav-toggle:checked~nav {
-    display: block;
-}
+nav {/* position responsible for location to previous ancestor */
+     position: absolute;
+     background-color: #ffffff;
+     /* width uses 100% of the width of page*/
+     width: 100%;
+     /*sets 0 padding on the top and bottom and 1 rem unit of padding on the left and right.*/
+     padding: 0 1rem;
+     /* left is responsible for location */
+     left: 0;
+     /* responsible for box shadow and color 
+     The shadow is positioned 0 pixels horizontally (left/right), 
+     2 pixels vertically (down), and has a blur radius of 2 pixels.
+      The color of the shadow is a dark gray */
+     box-shadow: 0 2px 2px #3a3a3a ;
+     /* display- Completely hides the nav element,won’t take up any space in the layout, won’t be visible. */
+     display: none;
+     /* the top of element Home Gallery Signup starts at buttom of parent */
+     top: 100%;}
+  
+/* nav toggle*/
 
-#nav-toggle {
-    display: none;
-}
+/* property makes the element a block-level element.
+ Block-level elements take up the full width of their parent container, 
+ stacking vertically, one after the other. */
+#nav-toggle:checked~nav{display: block;}
 
-.nav-toggle-label {
-    font-size: 2rem;
-}
+/* the below hides the checkbox */
+#nav-toggle{display:none;}
 
-/* Main content */
-main {
-    background-color: lightblue;
-    /* Make main element take up any surplus space to push footer down */
-    flex: 1 0 auto;
-    margin-top: 47px;
-}
+/* make label larger so its easy to tap on the X */
+.nav-toggle-label {font-size: 2rem;}
 
-/* Footer */
-footer {
-    background-color: orange;
-}
+
+ /* main content */
+main {background-color: lightblue;
+      /* makes main element take up any surplus space to push footer down*/
+      flex: 1 0 auto;
+      margin-top:47px;}
+
+/* footer */
+footer {background-color: orange;}
 
 /* Media query: tablets and larger (768px and up) */
-@media screen and (min-width: 768px) {
-    /* Header */
-    nav {
-        display: block;
-        position: relative;
-        box-shadow: none;
-        width: fit-content;
-        padding-right: 1rem;
-    }
-
-    #menu {
-        display: flex;
-    }
-
-    #menu > li {
-        padding-left: 1rem;
-    }
-
-    .nav-toggle-label {
-        display: none;
-    }
-
-    #logo {
-        font-size: 280%;
-        line-height: 75px;
-        margin: 0 0.5rem;
-    }
-
+@media screen and (min-width: 768px) 
+{
+    /*Header*/
+    nav {display: block;
+         position:relative;
+         box-shadow: none;
+         width: fit-content;
+         padding-right: 1rem;
+      }
+      /* display flex displays in a row not a column */
+      #menu {display: flex;}
+      /* padding provides spacing */
+      #menu > li {padding-left: 1rem;}
+      /* toggle label hides the X */
+      .nav-toggle-label {display:none;}
+       
+      #logo {
+            font-size: 280%;
+            line-height: 75px;
+            margin: 0 0.5rem;
+        }
     /* Main content */
     main {
-        /* Push main content down to accommodate larger header */
-        margin-top: 79px;
-    }
-}
-
-/* Large devices (laptops and desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-    #menu a:hover{
-        border-bottom: 1px solid #3a3a3a;
-    }
+      /* Push main content down to accommodate larger header */
+      margin-top: 79px;
+  }
 }
