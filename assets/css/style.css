@@ -88,7 +88,14 @@ main {background-color: lightblue;
       margin-top:47px;}
 
 /* footer */
-footer {background-color: orange;}
+#social-networks {text-align: center;
+                  padding: 20px 0;
+                  display: flex;
+                  justify-content: space-evenly;
+                  list-style: none;
+                }
+/* footer {background-color: orange;} */
+
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) 
@@ -126,4 +133,3 @@ footer {background-color: orange;}
     }
 }
 
-footer>ul>li {display: flex;}
