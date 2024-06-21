@@ -92,8 +92,13 @@ main {background-color: lightblue;
                   padding: 20px 0;
                   display: flex;
                   justify-content: space-evenly;
-                  list-style: none;
+                  /*removes list-style bullet points*/
+                  list-style-type: none;
                 }
+
+#social-networks i {font-size: 160%;
+                    padding:5%;
+                    color: #3a3a3a;}                
 /* footer {background-color: orange;} */
 
 
